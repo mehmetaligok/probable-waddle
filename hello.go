@@ -1,6 +1,8 @@
 package hello
 
-const version = "0.1.1"
+import "rsc.io/quote/v3"
+
+const version = "1.0.0"
 
 func Hello() string {
 	return quote.HelloV3()

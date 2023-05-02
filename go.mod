@@ -1,4 +1,4 @@
-module github.com/mehmetaligok/probable-waddle
+module github.com/mehmetaligok/probable-waddle/v1
 
 go 1.20
 
