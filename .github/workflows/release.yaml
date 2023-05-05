@@ -12,15 +12,17 @@ jobs:
     if: "startsWith(github.event.head_commit.message, 'chore: release')"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Extract version
         run: |
           version="v$(echo "${{ github.event.head_commit.message }}" | grep -oP 'release \K[\d.]+[-\w]*')"
           echo "Extracted version: $version"
-          echo "version=$(version)" >> $GITHUB_OUTPUT
+          echo "version=$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
       - name: Create git tag
-        if: ${{ steps.extract-version.outputs.version != '' }}
+#        if: ${{ steps.extract-version.outputs.version != '' }}
         run: |
-          git config --local user.name "release-bot"
-          git tag -a "$version" -m "Release $version"
-          git push origin "$version"
+          echo "${{ steps.extract-version.outputs }}"
+#          git config --local user.name "release-bot"
+#          git tag -a "$version" -m "Release $version"
+#          git push origin "$version"
