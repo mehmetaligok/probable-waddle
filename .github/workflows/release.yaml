@@ -1,0 +1,26 @@
+name: Release tag
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release tag
+    runs-on: ubuntu-20.04
+    if: "startsWith(github.event.head_commit.message, 'chore: release')"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Extract version
+        run: |
+          version="$(echo "$github.event.head_commit.message" | grep -oP 'release \K[\d.]+[-\w]*')"
+          echo "Extracted version: $version"
+          echo "::set-output name=version::$version"
+      - name: Create git tag
+        if: ${{ steps.extract-version.outputs.version != '' }}
+        run: |
+          git config --local user.name "release-bot"
+          git tag -a "$version" -m "Release $version"
+          git push origin "$version"
