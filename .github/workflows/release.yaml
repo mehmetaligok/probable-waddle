@@ -27,3 +27,5 @@ jobs:
           git config --local user.name "release-bot"
           git tag -a "${{ steps.extract-version.outputs.version }}" -m "Release $version"
           git push origin "${{ steps.extract-version.outputs.version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
