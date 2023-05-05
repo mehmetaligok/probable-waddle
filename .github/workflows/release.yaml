@@ -23,6 +23,7 @@ jobs:
       - name: Create git tag
         if: ${{ steps.extract-version.outputs.version != '' }}
         run: |
+          git config --local user.email "mehmetaligok95@gmail.com"
           git config --local user.name "release-bot"
           git tag -a "${{ steps.extract-version.outputs.version }}" -m "Release $version"
           git push origin "$version"
