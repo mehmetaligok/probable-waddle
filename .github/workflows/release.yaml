@@ -21,10 +21,8 @@ jobs:
           echo "version=$version"
           echo "version=$version" >> $GITHUB_OUTPUT
       - name: Create git tag
-#        if: ${{ steps.extract-version.outputs.version != '' }}
+        if: ${{ steps.extract-version.outputs.version != '' }}
         run: |
-          echo "${{ steps.extract-version.outputs }}"
-          echo "${{ steps.extract-version.outputs.version }}"
-#          git config --local user.name "release-bot"
-#          git tag -a "$version" -m "Release $version"
-#          git push origin "$version"
+          git config --local user.name "release-bot"
+          git tag -a "$version" -m "Release $version"
+          git push origin "$version"
