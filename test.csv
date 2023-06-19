@@ -1,0 +1,12 @@
+url,pageviews,category,onsale,attributes
+http://www.example.com/test-website/static/test-pageviews.1.html,50,cat1,FALSE,"{""color"": ""red"", ""condition"": ""new""}"
+http://www.example.com/test-website/products/1231234,178,streaming,TRUE,"{""color"": ""blue"", ""condition"": ""used""}"
+http://www.example.com/test-website/products/5477500,320,electronics,TRUE,"{""color"": ""green"", ""condition"": ""excellent""}"
+http://www.example.com/test-website/products/4123512,234,laptops,TRUE,"{""condition"": ""fair""}"
+http://www.example.com/test-website/products/2341233,43,smart homes,TRUE,"{""color"": ""black"", ""condition"": ""like new""}"
+http://www.example.com/test-website/products/3452341,31,tv,TRUE,"{""color"": ""white""}"
+http://www.example.com/test-website/products/6543322,199,smart homes,FALSE,"{""color"": ""purple"", ""condition"": ""good""}"
+http://www.example.com/test-website/products/4325212,224,headphones,FALSE,"{""color"": ""orange"", ""condition"": ""very good""}"
+http://www.example.com/test-website/products/2999288,99,smart homes,FALSE,"{""color"": ""pink"", ""condition"": ""mint""}"
+http://www.example.com/test-website/products/2111211,45,toys,TRUE,"{""color"": ""brown"", ""condition"": ""worn""}"
+http://magok.me/,23,toys,TRUE,"{""color"": ""brown"", ""condition"": ""worn""}"
